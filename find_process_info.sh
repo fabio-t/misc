@@ -1,5 +1,13 @@
 #!/bin/bash
 
+# If you only need to know the PID of a process,
+# you will probably want to use "pgrep -lf <process>" and be done with it.
+# This served me well when I had a bunch of processes with the same name,
+# but started in different folders, and I had to kill only some of
+# them according to the folder.
+# Therefore I only select the second and ninth column of the
+# "lsof -p" output.
+
 if [ ! -n "$1" ]
 then
 	echo "Usage: `basename $0` <process name>"
